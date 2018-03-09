@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ejercicio</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+</head>
+
+<body>
+
+
+    <div class="container">
+
+        <div class="row" id="container">
+
+        </div>
+
+
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script>
+
+        var urlServer = 'https://jsonplaceholder.typicode.com/photos';
+
+        $.get(urlServer)
+
+            .then(function (usuarios) {
+                console.log("bien" + usuarios);
+                for (var i = 0; i <= 100; i++) {
+                    var image = $(`
+                        <div class="card col-3" style="width: 18rem;">
+                                <img class="card-img-top" src="${usuarios[i].url}" alt="Card image cap" id="${usuarios[i].id}"><div class="card-body"><p class="card-text">${usuarios[i].title}</p></div></div>`);
+                    $('#container').append(image);
+                }
+            }).catch(function (error) {
+                console.log("mal" + error);
+
+            });
+
+
+    </script>
+</body>
+
+</html>

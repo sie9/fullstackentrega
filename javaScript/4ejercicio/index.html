@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ejercicio</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+</head>
+
+<body>
+
+    <div class="jumbotron mt-4">
+        <nav id="navegador" class="navbar navbar-light bg-light justify-content-between">
+            <a class="navbar-brand">Navegacion</a>
+            <form class="form-inline">
+                <input id="busqueda" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit" onClick="buscar()">Buscar</button>
+            </form>
+        </nav>
+
+        <hr class="my-4">
+
+        <div class="excercise-zone row ml-2" id="list">
+            <div class="card" style="width: 18rem;" id="first">
+                <div class="card-header" onClick="devolver()">
+                    Persona
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1">Nombre</span>
+                            </div>
+                            <input type="text" class="form-control" name="name" placeholder="Nombre" onfocus="fieldReceivedFocus('name')">
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1">Correo</span>
+                            </div>
+                            <input type="text" class="form-control" name="email" placeholder="Correo" onfocus="fieldReceivedFocus('email')">
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1">Edad</span>
+                            </div>
+                            <input type="text" class="form-control" name="age" placeholder="Edad" onfocus="fieldReceivedFocus('age')">
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <p class="lead mt-3">
+            <a class="btn btn-primary btn-lg" id="button" href="#" role="button">Añadir nuevo</a>
+        </p>
+
+        <hr class="my-4">
+
+    </div>
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        $('#button').click(funcionAnadir);
+        var personas = [];
+
+
+        function crearAlerta() {
+            var alertita = '<div class="alert alert-danger" role="alert" id="alerta" style="display:none">No hay alertas</div>';
+            //$('div + nav').after(alertita);
+            $(alertita).insertAfter("#navegador");
+        }
+        function devolver() {
+            //devuelvo a la normalidad
+            var busca = $('#busqueda').val();
+            for (var j = 0; j < personas.length; j++) {
+                if (personas[j].nombre == busca) {
+                    $('#' + (j + 1)).css({
+                        width: "15%",
+                        opacity: 1,
+                        marginLeft: "",
+                        marginRight: "",
+                        borderWidth: "1px"
+                    });
+                }
+            }
+        }
+
+        function buscar() {
+            var busca = $('#busqueda').val();
+
+            //añado animacion
+            for (var j = 0; j < personas.length; j++) {
+                //devuelvo a la normalidad
+                $('#' + (j + 1)).css({
+                    width: "15%",
+                    opacity: 1,
+                    marginLeft: "",
+                    marginRight: "",
+                    borderWidth: "1px"
+                });
+                if (personas[j].nombre == busca) {
+                    $('#' + (j + 1)).animate({
+                        width: "15%",
+                        opacity: 0.9,
+                        marginLeft: "0.4in",
+                        marginRight: "0.4in",
+                        borderWidth: "5px"
+                    }, 1500);
+                }
+            }
+        }
+
+        function borrar(campo) {
+            //borro de la array
+            personas.splice(parseInt(campo) - 1, 1);
+            //borro el html
+            $('#' + campo).remove();
+
+        }
+
+        function Modificar(campo) {
+            $('#' + campo + ' button[name="modifica"]').toggle(
+                function () {
+                    console.log("entra aqui");
+                    $('#' + campo + ' input[name="name"]').attr('disabled', true);
+                    $('#' + campo + ' input[name="email"]').attr('disabled', true);
+                    $('#' + campo + ' input[name="age"]').attr('disabled', true);
+                }, function () {
+                    console.log("o aqui");
+                    $('#' + campo + ' input[name="name"]').attr('disabled', false);
+                    $('#' + campo + ' input[name="email"]').attr('disabled', false);
+                    $('#' + campo + ' input[name="age"]').attr('disabled', false);
+                }
+            );
+        }
+
+        //Recibo el focus de un campo
+        function fieldReceivedFocus(pep) {
+            $('#first input[name="' + pep + '"]').attr('style', "");
+        }
+
+        function setearlos3(a, b) {
+            $('#first input[name="name"]').attr(a, b);
+            $('#first input[name="email"]').attr(a, b);
+            $('#first input[name="age"]').attr(a, b);
+        }
+
+        function funcionAnadir() {
+            var persona = {
+                nombre: "",
+                edad: 0,
+                correo: ""
+            };
+
+            //Cojo el valor
+            persona.nombre = $('#first input[name="name"]').val();
+            persona.correo = $('#first input[name="email"]').val();
+            persona.edad = $('#first input[name="age"]').val();
+
+            var objetito = ejercicio06(persona);
+
+            //Verifico si es valido
+            if (objetito.valid) {
+                //añado a la array   
+                personas.push(persona);
+                //guardarNuevoUsuario(persona);
+                //seteo los 3 a disabled
+                setearlos3("disabled", true);
+                //le cambio el id
+                $('#first').attr('id', personas.length);
+                //Creo un boton
+                var buttonDelete = $('<button type="button" class="btn btn-default btn-sm" onClick="borrar(' + personas.length + ')"><span class="glyphicon glyphicon-minus-sign"></span> Borrar</button>');
+
+                var buttonModify = $('<button type="button" name="modifica" class="btn btn-default btn-sm" onClick="Modificar(' + personas.length + ')"><span class="glyphicon glyphicon-pencil"></span> Modificar</button>');
+                //clono el div
+                var copia = $('#' + personas.length).clone();
+                //lo añado al contenedor
+                $(copia).prependTo("#list");
+                //al nuevo lo llamo first
+                $('#' + personas.length).attr('id', 'first');
+                //al insertado le añado un boton
+                var elemento = $('#' + personas.length);
+                elemento.append(buttonDelete);
+                elemento.append(buttonModify);
+
+                //devuelvo a la normalidad
+                setearlos3("disabled", false);
+                $('#first input[name="name"]').val("");
+                $('#first input[name="email"]').val("");
+                $('#first input[name="age"]').val("");
+
+            } else {
+                //creamos un codigo html
+                crearAlerta();
+                var texto = "<p>Alertas: <br>";
+                objetito.errors.forEach(element => {
+                    //lo pongo en rojo
+                    $('#first input[name="' + element.code + '"]').css("background-color", "red");
+
+                    texto += "    + " + element.text + ".<br>";
+                });
+                texto += "</p>"
+                //Enseño alerta
+                $('#alerta').html(texto);
+                $('#alerta').show();
+                setTimeout(function () {
+                    $('#alerta').hide();
+                }, 3000);
+                setTimeout(function () {
+                    $('#alerta').remove();
+                }, 1000);
+            }
+
+        }
+
+        function guardarNuevoUsuario(usuario) {
+            function SaveDataToLocalStorage(data) {
+                var a = [];
+                // Parse the serialized data back into an aray of objects
+                a = JSON.parse(localStorage.getItem('usuarios'));
+                // Push the new data (whether it be an object or anything else) onto the array
+                a.push(data);
+                // Alert the array value
+                alert(a);  // Should be something like [Object array]
+                // Re-serialize the array back into a string and store it in localStorage
+                localStorage.setItem('usuarios', JSON.stringify(a));
+            }
+        }
+
+        function cargarUsuarios() {
+            var b = JSON.parse(localStorage.getItem('usuarios'));
+            return b;
+        }
+    </script>
+</body>
+
+</html>
