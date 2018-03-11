@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../estilos.css">
+</head>
+
+<body>
+
+
+    <div class="container">
+        <div class="row" id="container">
+
+        </div>
+
+
+    </div>
+    <div class = "hidden" id="estrellas">
+
+        <span class="glyphicon glyphicon-star"></span>
+        <span class="glyphicon glyphicon-star"></span>
+        <span class="glyphicon glyphicon-star"></span>
+        <span class="glyphicon glyphicon-star"></span>
+        <span class="glyphicon glyphicon-star"></span>
+        <a href="www.google.es">prueba</a>
+    </div>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script>
+
+        var urlServer = './data/london.json';
+
+        $.get(urlServer)
+
+            .then(function (hoteles) {
+                console.log("bien" + hoteles);
+                hoteles.forEach(function (hotel) {
+
+                    var hotelito = `
+                                <div class="card col-3" style="width: 18rem;">
+                                        <h3> 
+                                            <a href="${hotel['Hotel Name Url']['href']}">${hotel['Hotel Name Url']['text']}</a> 
+                                        </h3>
+                                        <img class="card-img-top" href= "${hotel['Hotel Image']['href']}" src="${hotel['Hotel Image']['src']}" alt="${hotel['Hotel Image']['alt']}" ">
+                                        <div class="card-body">
+                                            <p class="card-adress"> 
+                                                <a href="${hotel['Address Link']['href']}"> ${hotel['Address Link']['text']}</a>
+                                                ${hotel['Address Block']['text']}
+                                            </p>
+                                            <p class="card-text"> ${hotel['Hotel Description']['text']}</p>
+                                        `;
+                    if (hotel['Clear Fix Block'] != null) {
+                        hotelito += `<div class="alert alert-info">
+                                             <strong>${hotel['Clear Fix Block']['text']}</strong>
+                                        </div>`;
+
+
+                    }
+                    if (hotel['Reviews Core 3'] != null) {
+                        var estrellitas = ``;
+                        if (hotel['Reviews Core 4'] != null) {
+                            var num = parseInt(hotel['Reviews Core 4']['text'] / 2);
+                            
+
+                            for (var i = 0; i < num; i++) {
+                                estrellitas += `<span class='glyphicon glyphicon-star'></span>`;
+                            }
+                        }
+                        var bien=``;
+                        if (hotel['Reviews Core 2'] != null) {
+                            bien+= hotel['Reviews Core 2']['text'];
+                            
+                        }
+                        hotelito += `<button type="button" class="btn btn-lg btn-danger" data-toggle="popover" title="Calificación: ${bien}" data-content="${estrellitas} <a href='${hotel['Reviews Core 3']['href']}'> ${hotel['Reviews Core 3']['text']}</a>" data-original-title="test title" >Más información</button>`;
+
+
+                    }
+                    hotelito += `
+                    </div>
+                            </div>`;
+
+                    $('#container').append(hotelito);
+                });
+
+                $('[data-toggle="popover"]').popover({
+                    container: 'body',
+                    html: true
+                })
+
+
+            }).catch(function (error) {
+                console.log("mal" + error);
+
+            });
+
+
+    </script>
+</body>
+
+</html>

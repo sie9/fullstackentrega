@@ -108,6 +108,9 @@ function recorrerInsertar(users){
             arrayUser.users_stored.push(arrayUser.items_inserted);
         } 
     });
+
+
+    
 }
 
 

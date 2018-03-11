@@ -12,9 +12,8 @@
 
 <body>
 
-
     <div class="container">
-
+        Ejemplos de get y push
         <div class="row" id="container">
 
         </div>
@@ -31,8 +30,12 @@
             .then(function (usuarios) {
                 console.log("bien" + usuarios);
                 for (var i = 0; i <= 100; i++) {
+
+                    if ( (i % 4) ==0){
+                        $('#container').append(`<hr style="width: 100%; color: black; height: 1px; background-color:black;" />`);
+                    }
                     var image = $(`
-                        <div class="card col-3" style="width: 18rem;">
+                        <div class="card col-4" style="width: 18rem;">
                                 <img class="card-img-top" src="${usuarios[i].url}" alt="Card image cap" id="${usuarios[i].id}"><div class="card-body"><p class="card-text">${usuarios[i].title}</p></div></div>`);
                     $('#container').append(image);
                 }

@@ -1,0 +1,86 @@
+ {
+“Address Block”: {
+
+      		“text”:
+“Westminster Borough, Londres (En el centro de la ciudad) – Cerca del metro”
+    
+	},
+
+  “Address Link”: {
+      
+	“href”:
+“https://www.booking.com/hotel/gb/centralparklondon.es.html?aid=376371;label=es-plivt*et7uZ0t35JwT4XYAS144456182283%3Apl%3Ata%3Ap1%3Ap21.680.000%3Aac%3Aap1t1%3Aneg%3Afi%3Atikwd-65526620%3Alp1005463%3Ali%3Adec%3Adm;sid=c65cba2b7b23151d89245d5015c815b9;ucfs=1;srpvid=3c399099bda901fc;srepoch=1519763636;room1=A%2CA;hpos=1;hapos=1;dest_type=city;dest_id=-2601889;srfid=e868f9aed7d44be4a81a647d791ac911166d6526X1;from=searchresults;map=1&msd=1#hotelTmpl“,
+
+        “text”: “Westminster Borough, Londres”
+
+   },
+
+   “Clear Fix Block”: { 
+	“text”: “Última reserva: hace 11 minutos” 
+   },
+    
+   “Hotel Description”: {
+
+      “text”:
+“El Central Park Hotel se encuentra a menos de 100 metros de Hyde Park, a 2 minutos a pie de la estación de metro de Queensway y a 15 minutos a pie de la zona de Kensington, donde hay tiendas, bares y...”
+    
+    },
+    
+    “Hotel Image”: {
+
+      “alt”: “Central Park Hotel”,
+
+      “href”:
+“https://www.booking.com/hotel/gb/centralparklondon.es.html?aid=376371;label=es-plivt*et7uZ0t35JwT4XYAS144456182283%3Apl%3Ata%3Ap1%3Ap21.680.000%3Aac%3Aap1t1%3Aneg%3Afi%3Atikwd-65526620%3Alp1005463%3Ali%3Adec%3Adm;sid=c65cba2b7b23151d89245d5015c815b9;ucfs=1;srpvid=3c399099bda901fc;srepoch=1519763636;room1=A%2CA;hpos=1;hapos=1;dest_type=city;dest_id=-2601889;srfid=e868f9aed7d44be4a81a647d791ac911166d6526X1;from=searchresults;from_hc_img=1#hotelTmpl”,
+
+      “src”:
+“https://s-ec.bstatic.com/xdata/images/hotel/square200/24627549.jpg?k=3f30d1d4c8eef1f39e01ccdbb22c0c72b929ce79199e4e6c3fe7e86881b8ca57&o=”
+
+     },
+    
+     “Hotel Name Url”: {
+
+      “href”:
+“https://www.booking.com/hotel/gb/centralparklondon.es.html?aid=376371;label=es-plivt*et7uZ0t35JwT4XYAS144456182283%3Apl%3Ata%3Ap1%3Ap21.680.000%3Aac%3Aap1t1%3Aneg%3Afi%3Atikwd-65526620%3Alp1005463%3Ali%3Adec%3Adm;sid=c65cba2b7b23151d89245d5015c815b9;ucfs=1;srpvid=3c399099bda901fc;srepoch=1519763636;room1=A%2CA;hpos=1;hapos=1;dest_type=city;dest_id=-2601889;srfid=e868f9aed7d44be4a81a647d791ac911166d6526X1;from=searchresults;highlight_room=#hotelTmpl”,
+
+      “text”: “Central Park Hotel Se abre en una ventana nueva”
+    
+      },
+    
+      “Reviews Core 1”: {
+
+      	“href”:
+“https://www.booking.com/hotel/gb/centralparklondon.es.html?aid=376371;label=es-plivt*et7uZ0t35JwT4XYAS144456182283%3Apl%3Ata%3Ap1%3Ap21.680.000%3Aac%3Aap1t1%3Aneg%3Afi%3Atikwd-65526620%3Alp1005463%3Ali%3Adec%3Adm;sid=c65cba2b7b23151d89245d5015c815b9;ucfs=1;srpvid=3c399099bda901fc;srepoch=1519763636;room1=A%2CA;hpos=1;hapos=1;dest_type=city;dest_id=-2601889;srfid=e868f9aed7d44be4a81a647d791ac911166d6526X1;from=searchresults;from_sr_review=1;#hotelTmpl”,
+
+      	“text”: “Bien 13,896 comentarios 7.0 Se abre en una ventana nueva”
+
+     },
+
+    “Reviews Core 2": {
+
+      “href”:
+        “https://www.booking.com/hotel/gb/centralparklondon.es.html?aid=376371;label=es-plivt*et7uZ0t35JwT4XYAS144456182283%3Apl%3Ata%3Ap1%3Ap21.680.000%3Aac%3Aap1t1%3Aneg%3Afi%3Atikwd-65526620%3Alp1005463%3Ali%3Adec%3Adm;sid=c65cba2b7b23151d89245d5015c815b9;ucfs=1;srpvid=3c399099bda901fc;srepoch=1519763636;room1=A%2CA;hpos=1;hapos=1;dest_type=city;dest_id=-2601889;srfid=e868f9aed7d44be4a81a647d791ac911166d6526X1;from=searchresults;from_sr_review=1;#hotelTmpl”,
+
+      “text”: “Bien”
+
+    },
+    
+    “Reviews Core 3”: {
+
+      “href”:
+“https://www.booking.com/hotel/gb/centralparklondon.es.html?aid=376371;label=es-plivt*et7uZ0t35JwT4XYAS144456182283%3Apl%3Ata%3Ap1%3Ap21.680.000%3Aac%3Aap1t1%3Aneg%3Afi%3Atikwd-65526620%3Alp1005463%3Ali%3Adec%3Adm;sid=c65cba2b7b23151d89245d5015c815b9;ucfs=1;srpvid=3c399099bda901fc;srepoch=1519763636;room1=A%2CA;hpos=1;hapos=1;dest_type=city;dest_id=-2601889;srfid=e868f9aed7d44be4a81a647d791ac911166d6526X1;from=searchresults;from_sr_review=1;#hotelTmpl”,
+
+      “text”: “13,896 comentarios”
+
+    },
+    
+     “Reviews Core 4": {
+
+      “href”:
+“https://www.booking.com/hotel/gb/centralparklondon.es.html?aid=376371;label=es-plivt*et7uZ0t35JwT4XYAS144456182283%3Apl%3Ata%3Ap1%3Ap21.680.000%3Aac%3Aap1t1%3Aneg%3Afi%3Atikwd-65526620%3Alp1005463%3Ali%3Adec%3Adm;sid=c65cba2b7b23151d89245d5015c815b9;ucfs=1;srpvid=3c399099bda901fc;srepoch=1519763636;room1=A%2CA;hpos=1;hapos=1;dest_type=city;dest_id=-2601889;srfid=e868f9aed7d44be4a81a647d791ac911166d6526X1;from=searchresults;from_sr_review=1;#hotelTmpl”,
+
+      “text”: “7.0"
+    
+     }
+  
+},
